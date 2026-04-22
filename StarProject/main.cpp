@@ -58,4 +58,35 @@ int main()
 	double finalScore;
 
 	cout << "STAR SEARCH JUDGING SYSTEM" << endl;
+
+
+// 5 Judge loop
+{
+for (int i = 1; i <= 5; i++)
+{
+    cout << "Judge " << i << ": ";
+    score = getScore();
+
+    total += score;
+
+    if (isLower(score, minScore))
+    {
+        minScore = score;
+    }
+
+    if (isHigher(score, maxScore))
+    {
+        maxScore = score;
+    }
+}
+
+finalScore = calcAverage(total, minScore, maxScore);
+
+cout << fixed << setprecision(2);
+cout << "\nHighest Score Dropped: " << maxScore << endl;
+cout << "Lowest Score Dropped: " << minScore << endl;
+cout << "Final Score: " << finalScore << endl;
+
+return 0;
+
 }
