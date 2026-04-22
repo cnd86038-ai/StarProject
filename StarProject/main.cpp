@@ -33,4 +33,29 @@ Preconditions: value1 and value2 are valid scores
 Postconditions: Returns true if value1 is <= value2, otherwise returns false
 */
 
+bool isHigher(double value1, double value2)
+{
+	return value1 > value2;
+}
 
+/*
+Purpose: Calculates final average after removing lowest/highest scores
+Preconditions: total is the sum of all scores, minScore is the lowest score(valid), maxScore is the highest score(valid)
+Postconditions: Returns the average score after removing the lowest and highest scores
+*/
+
+double calcAverage(double total, double minScore, double maxScore)
+{
+	return (total - minScore - maxScore) / 3.0;
+}
+
+int main()
+{
+	double score;
+	double total = 0.0;
+	double minScore = 10.0; // Initialize to max possible score
+	double maxScore = 0.0;  // Initialize to min possible score
+	double finalScore;
+
+	cout << "STAR SEARCH JUDGING SYSTEM" << endl;
+}
