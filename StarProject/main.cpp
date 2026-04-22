@@ -19,6 +19,7 @@ double getScore()
 	double score;
 	cout << "Enter the judge's score (0.0 - 10.0): ";
 	cin >> score;
+
 	while (score < 0.0 || score > 10.0)
 	{
 		cout << "Invalid score. Please enter a score between 0.0 and 10.0: ";
@@ -29,6 +30,16 @@ double getScore()
 
 /*
 Purpose: Determines if value1 is <= value2
+Preconditions: value1 and value2 are valid scores
+Postconditions: Returns true if value1 is <= value2, otherwise returns false
+*/
+bool isLower(double value1, double value2)
+{
+	return value1 < value2;
+}
+
+/*
+Purpose: Determines if value1 is >= value2
 Preconditions: value1 and value2 are valid scores
 Postconditions: Returns true if value1 is <= value2, otherwise returns false
 */
@@ -61,20 +72,19 @@ int main()
 
 
 // 5 Judge loop
-{
 for (int i = 1; i <= 5; i++)
-{
+{ 
     cout << "Judge " << i << ": ";
     score = getScore();
 
     total += score;
 
-    if (isLower(score, minScore))
+    if (score < minScore)
     {
         minScore = score;
     }
 
-    if (isHigher(score, maxScore))
+    if (score > maxScore)
     {
         maxScore = score;
     }
@@ -86,7 +96,6 @@ cout << fixed << setprecision(2);
 cout << "\nHighest Score Dropped: " << maxScore << endl;
 cout << "Lowest Score Dropped: " << minScore << endl;
 cout << "Final Score: " << finalScore << endl;
-
 
 return 0;
 
